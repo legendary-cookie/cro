@@ -4,6 +4,8 @@ add_executable(cro
   download.c
   utils.c
   common.c
+  parse.c
+  sync.c
 )
 # Link with libs
 target_link_libraries(cro ${CURL_LIBRARIES} ${ZSTD_LIBRARIES})
