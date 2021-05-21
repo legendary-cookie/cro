@@ -5,4 +5,4 @@ add_executable(cro
   utils.c
 )
 # Link with libs
-target_link_libraries(cro ${CURL_LIBRARIES} ${BZ2_LIBRARIES})
+target_link_libraries(cro ${CURL_LIBRARIES} ${ZSTD_LIBRARIES})

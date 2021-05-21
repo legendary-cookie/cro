@@ -1,15 +1,13 @@
-#include <stdio.h>
 #include "download.h"
 #include "utils.h"
-
+#include <stdio.h>
 
 int main(int argc, char const *argv[]) {
-  int res = download("https://cro-pkg.github.io/CROPKG.bz2", "cropkg.bz2");
+  int res = download("https://cro-pkg.github.io/CROPKG.zst", "cropkg.zst");
   if (!res) {
-    printf("%s\n","Downloading went wrong!" );
+    printf("%s\n", "Downloading went wrong!");
     return 1;
   }
-  FILE* f = fopen("cropkg.bz2", "rb");
-  bunzip(f);
+  decompress("cropkg.zst");
   return 0;
 }

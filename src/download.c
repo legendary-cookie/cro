@@ -1,16 +1,15 @@
+#include "utils.h"
 #include <curl/curl.h>
 #include <stdio.h>
-#include "utils.h"
 
 /*
-* Downloads to given file, uses libcurl
-*/
+ * Downloads to given file, uses libcurl
+ */
 
-int download(char* url, char* path)
-{
+int download(char *url, char *path) {
   CURL *curl = curl_easy_init();
   FILE *wfd = fopen(path, "w");
-  if(curl) {
+  if (curl) {
     CURLcode res;
     // Set URL of curl request to char* url param
     curl_easy_setopt(curl, CURLOPT_URL, url);
@@ -19,7 +18,7 @@ int download(char* url, char* path)
     // Sets the writefunction to NULL
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
     // 0 disable messages
-    curl_easy_setopt (curl, CURLOPT_VERBOSE, 0L);
+    curl_easy_setopt(curl, CURLOPT_VERBOSE, 0L);
     // Perform the request
     res = curl_easy_perform(curl);
     // Cleanup!

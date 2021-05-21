@@ -1,1 +1,2 @@
-int bunzip(FILE *f);
+#include <stdio.h>
+void decompress(const char *fname);

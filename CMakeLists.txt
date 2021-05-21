@@ -10,6 +10,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 find_package(PkgConfig REQUIRED)
 # Find curl
 pkg_check_modules(CURL REQUIRED libcurl)
-pkg_check_modules(BZ2 REQUIRED bzip2)
+pkg_check_modules(ZSTD REQUIRED libzstd)
 # Add src subdir (main program stuff)
 add_subdirectory(src)
