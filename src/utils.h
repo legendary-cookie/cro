@@ -1,0 +1,1 @@
+int bunzip(FILE *f);
